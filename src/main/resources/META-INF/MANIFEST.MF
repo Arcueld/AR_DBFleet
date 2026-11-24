@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: AR DBFleet Batch Importer
+Bundle-SymbolicName: com.arsenal.dbfleet;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Vendor: Arsenal
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Bundle-ClassPath: .
+Export-Package: com.arsenal.dbfleet.core,
+ com.arsenal.dbfleet.model,
+ com.arsenal.dbfleet.parse,
+ com.arsenal.dbfleet.ui
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.core.commands,
+ org.eclipse.core.jobs,
+ org.eclipse.jface,
+ org.eclipse.swt,
+ org.eclipse.ui,
+ org.eclipse.ui.workbench,
+ org.jkiss.dbeaver.model,
+ org.jkiss.dbeaver.registry,
+ org.jkiss.dbeaver.ui,
+ org.jkiss.dbeaver.ui.navigator,
+ org.jkiss.dbeaver.ui.editors.connection,
+ org.jkiss.utils
+Automatic-Module-Name: com.arsenal.dbfleet

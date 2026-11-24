@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension point="org.eclipse.ui.commands">
+      <command id="com.arsenal.dbfleet.batchImport"
+               name="批量导入连接 (AR_DBFleet)"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.handlers">
+      <handler commandId="com.arsenal.dbfleet.batchImport"
+               class="com.arsenal.dbfleet.ui.BatchImportHandler"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.menus">
+      <!-- 主菜单 Database (dataSourceMenu) 末尾 -->
+      <menuContribution allPopups="false"
+                        locationURI="menu:dataSourceMenu?after=additions">
+         <separator name="ar_dbfleet" visible="true"/>
+         <command commandId="com.arsenal.dbfleet.batchImport"
+                  label="批量导入连接..."
+                  style="push"/>
+      </menuContribution>
+      <!-- 数据库导航器右键菜单 -->
+      <menuContribution allPopups="true"
+                        locationURI="popup:org.eclipse.ui.popup.any?after=navigator_additions_end">
+         <command commandId="com.arsenal.dbfleet.batchImport"
+                  label="批量导入连接..."
+                  style="push">
+            <visibleWhen>
+               <with variable="activePartId">
+                  <equals value="org.jkiss.dbeaver.core.databaseNavigator"/>
+               </with>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+
+</plugin>
